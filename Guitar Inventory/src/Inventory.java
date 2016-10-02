@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -27,7 +28,8 @@ public class Inventory {
 		return null;
 	}
 	
-	public Guitar search(Guitar searchGuitar) {
+	public ArrayList search(Guitar searchGuitar) {
+		ArrayList<Guitar> guitarList = new ArrayList<Guitar>();
 		for (Iterator i = guitars.iterator(); i.hasNext(); ) {
 			Guitar guitar = (Guitar) i.next();
 			//Ignore serial number since it's unique
@@ -47,8 +49,8 @@ public class Inventory {
 			Wood topWood = searchGuitar.getTopWood();
 			if ((topWood != null) && (!topWood.equals("")) && (!topWood.equals(guitar.getTopWood())))
 				continue;
-				return guitar;
+				guitarList.add(guitar);
 		}
-		return null;
+		return guitarList;
 	}
 }
