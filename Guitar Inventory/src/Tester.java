@@ -7,24 +7,23 @@ public class Tester {
 		Inventory inventory = new Inventory();
 		initializeInventory (inventory);
 		
-		Guitar whatErinLikes = new Guitar("", 0, Builder.FENDER, "stratocaster", Type.ELECTRIC, Wood.CEDAR, Wood.MAPLE);
+		GuitarSpec whatErinLikes = new GuitarSpec(Builder.FENDER, "Stratocaster", Type.ELECTRIC, Wood.CEDAR, Wood.MAPLE);
 		ArrayList matchingGuitar = inventory.search(whatErinLikes);
 		
-		if (matchingGuitar != null) {
+		if (matchingGuitar.iterator().hasNext()) {
 			System.out.println("Try one of these guitars:");
 			
 			for (Iterator i = matchingGuitar.iterator(); i.hasNext(); ) {
 				Guitar guitar = (Guitar)i.next();
-				System.out.println("This Guitar is a " + guitar.getBuilder() + " " + guitar.getModel());
-				System.out.println("Its back is made of " + guitar.getBackWood());
-				System.out.println("Its top is made of " + guitar.getTopWood());
+				System.out.println("This Guitar is a " + guitar.getSpec().getBuilder() + " " + guitar.getSpec().getModel());
+				System.out.println("Its back is made of " + guitar.getSpec().getBackWood());
+				System.out.println("Its top is made of " + guitar.getSpec().getTopWood());
 				System.out.println("It costs: " + "$" + guitar.getPrice());
 				System.out.println("");
 			}
 		} else {
 			System.out.println("Sorry Erin, we do not have any guitars for you.");
 		}
-		System.out.println(matchingGuitar);
 	}
 
 	private static void initializeInventory(Inventory inventory) {
