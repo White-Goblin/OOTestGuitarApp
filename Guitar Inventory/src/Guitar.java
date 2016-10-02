@@ -1,11 +1,15 @@
 
 public class Guitar {
 	
-	private String serialNumber, builder, model, type, backWood, topWood;
+	private String serialNumber, model;
+	Wood topWood;
+	Wood backWood;
+	Type type;
+	Builder builder;
 	private double price;
 	
-	public Guitar(String serialNumber, double price, String builder, 
-				  String model, String type, String backWood, String topWood) {
+	public Guitar(String serialNumber, double price, Builder builder, 
+				  String model, Type type, Wood backWood, Wood topWood) {
 		this.serialNumber = serialNumber;
 		this.price = price;
 		this.builder = builder;
@@ -24,19 +28,19 @@ public class Guitar {
 	public String getSerialNumber() {
 		return serialNumber;
 	}
-	public String getBuilder() {
+	public Builder getBuilder() {
 		return builder;
 	}
 	public String getModel() {
 		return model;
 	}
-	public String getType() {
+	public Type getType() {
 		return type;
 	}
-	public String getBackWood() {
+	public Wood getBackWood() {
 		return backWood;
 	}
-	public String getTopWood() {
+	public Wood getTopWood() {
 		return topWood;
 	}
 
