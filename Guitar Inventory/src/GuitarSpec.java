@@ -1,8 +1,3 @@
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.ArrayList;
-import java.util.Iterator;
-
 public class GuitarSpec {
 	
 	GuitarSpec (Builder builder, String model, Type type, Wood topWood, Wood backWood) {
