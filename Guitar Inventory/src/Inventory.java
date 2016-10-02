@@ -47,6 +47,7 @@ public class Inventory {
 			String topWood = searchGuitar.getTopWood();
 			if ((topWood != null) && (!topWood.equals("")) && (!topWood.equals(guitar.getTopWood())))
 				continue;
+				return guitar;
 		}
 		return null;
 	}
