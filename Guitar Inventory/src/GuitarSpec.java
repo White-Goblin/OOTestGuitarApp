@@ -1,11 +1,12 @@
 public class GuitarSpec {
 	
-	GuitarSpec (Builder builder, String model, Type type, Wood topWood, Wood backWood) {
+	GuitarSpec (Builder builder, String model, Type type, Wood topWood, Wood backWood, NumStrings stringCount) {
 		this.builder = builder;
 		this.model = model.toLowerCase();
 		this.type = type;
 		this.topWood = topWood;
 		this.backWood = backWood;
+		this.stringCount = stringCount;
 	}
 	
 	private Builder builder;
@@ -13,13 +14,15 @@ public class GuitarSpec {
 	private Type type;
 	private Wood topWood;
 	private Wood backWood;
+	private NumStrings stringCount;
 	
 	public boolean matches(GuitarSpec otherSpec) {
-		if (builder != otherSpec.builder) return false;
+		if (!builder.equals(otherSpec.getBuilder())) return false;
 		if (model != null && !model.equals("") && !model.equals(otherSpec.getModel())) return false;
-		if (type != null && !type.equals("") && !type.equals(otherSpec.getType())) return false;
-		if (backWood != null && !backWood.equals("") && !backWood.equals(otherSpec.getBackWood())) return false;
-		if (topWood != null && !topWood.equals("") && !topWood.equals(otherSpec.getTopWood())) return false;
+		if (!type.equals(otherSpec.getType())) return false;
+		if (!backWood.equals(otherSpec.getBackWood())) return false;
+		if (!topWood.equals(otherSpec.getTopWood())) return false;
+		if (!stringCount.equals(otherSpec.getNumStrings())) return false;
 		return true;
 	}
 	
@@ -37,6 +40,9 @@ public class GuitarSpec {
 	}
 	public Wood getTopWood() {
 		return topWood;
+	}
+	public NumStrings getNumStrings() {
+		return stringCount;
 	}
 	
 }
