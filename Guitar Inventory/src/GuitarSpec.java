@@ -2,7 +2,7 @@ public class GuitarSpec {
 	
 	GuitarSpec (Builder builder, String model, Type type, Wood topWood, Wood backWood) {
 		this.builder = builder;
-		this.model = model;
+		this.model = model.toLowerCase();
 		this.type = type;
 		this.topWood = topWood;
 		this.backWood = backWood;

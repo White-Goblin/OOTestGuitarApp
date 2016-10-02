@@ -27,7 +27,7 @@ public class Tester {
 	}
 
 	private static void initializeInventory(Inventory inventory) {
-		inventory.addGuitar("2xy33ls", 12.99, Builder.FENDER, "Stratocaster", Type.ELECTRIC, Wood.CEDAR, Wood.MAPLE);
+		inventory.addGuitar("2xy33ls", 12.99, Builder.FENDER, "StraToCasTer", Type.ELECTRIC, Wood.CEDAR, Wood.MAPLE);
 		inventory.addGuitar("33234443", 1299.99, Builder.FENDER, "Stratocaster", Type.ELECTRIC, Wood.CEDAR, Wood.MAPLE);
 		inventory.addGuitar("4434", 0.99, Builder.FENDER, "Stratocaster", Type.ELECTRIC, Wood.CEDAR, Wood.MAPLE);
 		inventory.addGuitar("xxyxtrt4", 129999.99, Builder.PRS, "Stratocaster", Type.ACOUSTIC, Wood.SITKA, Wood.COCOBOLO);
